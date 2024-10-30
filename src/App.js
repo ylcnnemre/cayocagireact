@@ -1,6 +1,6 @@
 import React from 'react'
 import { AuthProvider } from './AuthProvider'
-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
+import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Admin from './pages/Admin'
@@ -15,6 +15,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path='*' element={<Navigate to={"/"} />} />
         </Routes>
       </Router>
       <ToastContainer />
